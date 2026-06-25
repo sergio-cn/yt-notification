@@ -51,7 +51,9 @@ def send_telegram_message(title, link):
         "text": f"🎬 *{title}*\n\n{link}",
         "parse_mode": "Markdown",
     }
-    requests.post(url, json=payload, timeout=10).raise_for_status()
+    r = requests.post(url, json=payload, timeout=10)
+    print(r.json())
+    r.raise_for_status()
     print(f"✅ Enviado: {title}")
 
 
