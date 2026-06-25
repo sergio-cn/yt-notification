@@ -48,6 +48,7 @@ def send_telegram_message(title, link):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {
         "chat_id": "-1003797390603",
+        "message_thread_id": 29,
         "text": f"🎬 {title}\n\n{link}",
     }
     r = requests.post(url, json=payload, timeout=10)
