@@ -47,7 +47,7 @@ def save_last_sent_id(video_id):
 def send_telegram_message(title, link):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {
-        "chat_id": "-1003797390603_29",
+        "chat_id": "-1003797390603",
         "text": f"🎬 *{title}*\n\n{link}",
         "parse_mode": "Markdown",
     }
