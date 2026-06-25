@@ -25,3 +25,11 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         run: python bot.py
+
+      - name: Guardar último video
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add last_video.json
+          git diff --cached --quiet || git commit -m "Update last video ID"
+          git push
